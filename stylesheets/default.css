@@ -1,0 +1,67 @@
+.profile-img {
+	height: 160px;
+	width: 160px;
+	border-radius: 100%;
+	border: 20px solid #ff6c00;
+    display: inline-block;
+    float:left;
+}
+
+header {
+	background-color: #220679;
+    display: block;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+#info {
+    display:block;
+    overflow:hidden;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: right;
+}
+
+#contacts {
+  text-align: right;
+}
+
+
+
+header h1 {
+	color: #ff6c00;
+	font-size: 2em;
+    text-align: center;
+}
+
+header h2 {
+    color: #e36000;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+p {
+ background-color: #ff6c00;   
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #220679;
+    margin: float;
+}
+
+#links a {
+    width: 24%;
+}
+
+#contacts a {
+    width: 17%;
+}
+
+main {
+    background-color: #5127d8;
+    margin-top: 0em;
+}
