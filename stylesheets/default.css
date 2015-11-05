@@ -1,8 +1,8 @@
 .profile-img {
-	height: 160px;
-	width: 160px;
+	height: 10em;
+	width: 10em;
 	border-radius: 100%;
-	border: 20px solid #ff6c00;
+	border: 1.5em solid #ff6c00;
     display: inline-block;
     float:left;
 }
@@ -12,20 +12,40 @@ header {
     display: block;
     padding-bottom: 0px;
     margin-bottom: 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+main {
+    position: absolute;
+    top: 14em;
 }
 
 #info {
     display:block;
     overflow:hidden;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    text-align: right;
+    
 }
 
 #contacts {
-  text-align: right;
+ height: 1.5em;
+ margin: 0px;
+ position: absolute;
+ width: 100%;
+ left: 6.5em;
+ bottom: 0em;
+ text-align: left;
 }
 
+#links {
+    width: 100%;
+    height: 1.5em;
+    position: absolute;
+    left: 11.5em;
+    margin: 0;
+}
 
 
 header h1 {
@@ -49,19 +69,21 @@ a {
     color: #ffffff;
     text-align: center;
     display: inline-block;
-    border: 1px solid #220679;
     margin: float;
 }
 
 #links a {
-    width: 24%;
+    width: calc((100% - 11em) / 4);
+    height: 1.5em;
 }
 
 #contacts a {
-    width: 17%;
+    height: 1.5em;
+    width: calc((100% - 3.5em) / 6);
+    vertical-align: middle;
+    padding-top: 1px;
 }
 
-main {
+html {
     background-color: #5127d8;
-    margin-top: 0em;
 }
