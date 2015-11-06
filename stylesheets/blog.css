@@ -1,0 +1,62 @@
+main aside {
+	display: inline-block;
+	width: 10em;
+	height: auto;
+	background-color: #3810b6;
+	border: .25em solid #593b00;
+	position: fixed;
+}
+
+main article {
+	display: inline-block;
+	float: right;
+	width: calc(100% - 12em);
+	color: #d48e00;
+}
+
+article h2 {
+	color: #ffaa00;
+}
+
+aside p {
+	font-size: 0.75em;
+	margin: 0em;
+
+}
+
+aside a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1em;
+}
+
+aside a:visited {
+	color: #d48e00;
+}
+
+#main-title {
+	color: #ffffff;
+	font-size: 2.5em;
+	font-family: serif;
+	margin: 0;
+}
+
+#subtitle {
+	color: #ffaa00;
+	font-size: 2em;
+	font-family: serif;
+}
+
+#date {
+	color: #ffaa00;
+	font-style: bold;
+}
+
+.question {
+	color: #ffffff;
+	font-size: 1.5em;
+}
+
+.answer {
+	color: #d48e00;
+}
