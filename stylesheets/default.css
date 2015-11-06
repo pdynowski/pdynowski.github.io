@@ -16,6 +16,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
+    z-index:1;
 }
 
 main {
@@ -60,11 +61,11 @@ header h2 {
     text-align: center;
 }
 
-p {
+header p {
  background-color: #ff6c00;   
 }
 
-a {
+header a {
     text-decoration: none;
     color: #ffffff;
     text-align: center;
@@ -85,5 +86,5 @@ a {
 }
 
 html {
-    background-color: #5127d8;
+    background-color: #2a0a92;
 }
