@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS and page styling</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/css.css">
+</head>
+
+<body>
+      <header>
+      <img src="../imgs/profile.jpg" alt="My smiling face" class="profile-img">
+      
+      <div id="info">
+        <h1>Paul Dynowski</h1>
+        <h2>Fledgeling Web Developer, All-Around Swell Guy</h2>
+      </div>
+            <p id="links">
+          <a href="#">Portfolio</a>
+                <a href="index.html">Blog</a>
+          <a href="#">About Me</a>
+          <a href="#">Resume</a>
+            </p>    
+        
+            <p id="contacts">
+              Contact Me: 
+          <a href="mailto:paul.dynowski@gmail.com">Email</a>
+          <a href="https://github.com/pdynowski">GitHub</a>
+          <a href="https://www.linkedin.com/pub/paul-dynowski/36/612/48b
+        ">LinkedIn</a>
+          <a href="https://www.facebook.com/paul.dynowski">Facebook</a>
+          <a href="https://twitter.com/pdynowski">Twitter</a>
+            </p>
+    </header>
+
+<main>
+  <aside>
+        <a href="index.html">Blog Index</a>
+        <br>
+        Links to Blog Articles:
+        <ol>
+          <li><a href="git.html">Git and version control</a><br><p>Added 10/22/2015</p></li>
+          <li><a href="css-concepts.html">CSS and styling</a><p>Added 11/6/2015</p></li>
+          <li>#3</li>
+          <li>#4</li>
+          <li>#5</li>
+          <li>#6</li>
+          <li>#7</li>
+        </ol>
+        <a href="http://pdynowski.github.io">Back to main site</a>
+      </aside>
+      <article>
+      <p id="main-title">CSS and the Art of Webpage Styling</p>
+      <p id="subtitle">The devil doesn't wear Prada, the devil uses absolute positioning</p>
+      <p id="date">Nov 6, 2015</p>
+
+        <p class="answer"> Welcome to this week's technical blog, all about CSS. In theory, I was supposed to select one of four questions to blog about, but, dammit, I learned all this stuff, so you're going to see me show it off. Here are some quick links to further down the page, should you wish to see one specific item: <a href="#box">the box model</a>, <a href="#class">use of classes vs. IDs</a>, <a href="#positioning">positioning</a>, and <a href="#inline">inline vs. inline-block</a>.</p>
+
+        <p class="question" id="box">
+          What is the difference between margin, border, and padding? </p>
+          <p class="answer">Ah, the box model. Defining the simple way to style an HTML element since...(a quick Wikpedia search tells me) December 16, 1996, when the CSS1 recommendation was first adopted by the <a href="http://www.w3.org">World Wide Web Consortium</a>. So, let's take a look at this bad boy: </p>
+            <img src="../imgs/boxdim.png" alt="The Box Model" id="boximg">
+        <p class="answer">Now, let's break this image down a little. We can immediately see that, moving outward from the actual content of the element, the padding, border, and margin are, essentially, different layers that can be defined to change the look of an element. The padding and the margin are doomed to remain forever invisible, except for the effect that they have on the placement of elements on the page. The border, however, can be made gloriously visible, in any of many styles (solid, dashed, dotted, etc.). Now, let's play with these things a little. We'll start with a basic text-containing div, with visible border, like so:
+          <xmp>
+  #base-div {
+  display: inline-block;
+  background-color: #ffffff;
+}
+          </xmp></p>
+          <div id="base-div">Base Div</div>
+
+          <p class="answer">Now, let's add a visible border, so we can see other changes more easily:
+         <xmp>
+  #bordered-div {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 5px solid #d48e00;
+  }
+        </xmp></p>
+        <div id="bordered-div">Bordered Div
+        </div>
+        <p class="answer"> Now, add some padding (say, 10 pixels) to that div:
+          <xmp>
+  #padded-div {
+    display: inline-block;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 5px solid #d48e00;
+}
+          </xmp>
+        </p>
+        <div id="padded-div">Padded Div</div>
+        <p class="answer">So, we can see that padding increases the space between the content of the element and the border of the element. In this case, we increased the padding equally around the content with the property "<i>padding: 10px</i>"</p>
+        <p class="answer">Next, and finally, we'll look at what happens when we add a margin to the base div. So, we're going to remove the padding, but add 20px of margin, instead.
+          <xmp>
+  #margin-div {
+    display: inline-block;
+    background-color: #ffffff;
+    margin: 20px;
+    border: 5px solid #d48e00;
+  }
+</xmp></p>
+        <div id="margin-div">Margined Div</div>
+        <p class="answer"> So, we see what that has done to our super-fancy text div. The spacing all the way around the border has grown larger - the margin has moved the div down and to the right, and would have moved any elements below or to the right of the div further in that direction, clearing the margin of the element. </p>
+        <p class="answer"> So, to make a long story short: (TOO LATE!): the content and the border are the (potentially) visible parts of an element. Padding controls the spacing between the content and the border. Margin controls the spacing between the element and another element. Remember, also, that all three of the properties can be controlled separately for each side of the element.</p>
+
+          <a href="#main-title">Return to top</a>
+
+
+        <p class="question" id="class">
+            What are the best practices associated with using classes vs IDs? </p>
+
+            <p class="answer">
+              So. Now we know a little bit about the box model of the elements. The question remains, then, how do we get the styling onto the elements. Generally, when you define an element in your HTML, you can add class or ID attributes to the tag. Then, instead of adding styling via the general tag, you can choose to use the class or ID to add a more specific styling to certain elements. IDs have a limitation, though: they can only be used once per webpage. This means, however, that if you apply styling to an ID, it is <i>very specific</i> - it will apply only to that single element. So, if you have several elements you wish to style in the same manner, you may wish to employ a <b>class</b> - if you apply styling to a class, any element tagged with that class will obtain that styling. To summarize: if you only need to use it once, throw it in an ID; if you'd like to be able to reuse the styling, make it a class.
+        </p>
+        <a href="#main-title">Return to top</a>
+        <p class="question" id="positioning">
+            What are the differences between relative, absolute, fixed, and static positioning? </p>
+            <p class="answer">Now you've got your elements, and you've got them styled just like you want. How can you make them go where you want them to? <b>Positioning!</b> So, first, a quick listing/definition of the types of positioning, followed by some code examples.
+              <ul>
+                <li><p>Static</p> - the most basic of the positioning types, static is the default. An element is positioned wherever the HTML interpreter thinks it should go within the flow of the elements. Any element that doesn't manually receive one of the following positioning types is statically positioned.</li>
+                <li><p>Relative</p> - this type of positioning allows you to move an element, defined from a base of the place where the element would have been if statically positioned. </li>
+                <li><p>Absolute</p> - the trickiest of the positioning methods, this defines the position relative to the closest manually positioned ancestor element. If there is no ancestor element that has been manually positioned, absolute positioning is relative to the body of the page. As you may have been able to tell by teh subtitle to this article, absolute positioning is not my favorite.</li>
+                <li><p>Fixed</p> - conceptually, I find this the simplest of the defined positioning types. It sticks the element wherever you tell it to in the viewing window, and the element doesn't stays in one place, regardless of the motion of the page it's on.</li>
+              </ul>
+
+              Now, some examples. First, a statically-positioned div (we're looking at the blue square on the orange field, here)
+              <div class="background-div">
+                <div class="static-div"></div>
+                <xmp>
+.static-div {
+  display: inline-block;
+  background-color: #220679;
+  height: 5em;
+  width: 5em;
+}
+                </xmp>
+              </div>
+
+              This is where the HTML interpreter chose to place the blue square, with no modifications - a static positioning. Next, we'll move on to a relative positioning: 
+              <div class="background-div">
+                <div class="relative-div"></div>
+              
+              <xmp>
+.relative-div {
+  display: inline-block;
+  background-color: #220679;
+  height: 5em;
+  width: 5em;
+  position: relative;
+  top: 5em;
+  left: 25%;
+}
+              </xmp>
+              </div>
+
+              So, with relative positioning, you can see that the blue square has moved relative to where the static positioning would have placed it - in this case, shifted down and to the right. Now, an example of absolute positioning:
+
+              <div class="background-div">
+                <div class="absolute-div"></div>
+              
+              <xmp>
+.absolute-div {
+  display: inline-block;
+  background-color: #220679;
+  height: 5em;
+  width: 5em;
+  position: relative;
+  top: 2.5em;
+  left: 50%;
+}
+              </xmp>
+              </div>
+
+              It should be noted that the background divs have had their position defined (ie, they're not static) so that the absolute positioning of the blue square would be relative to that background - the nearest ancestor that had been manually positioned.<br>
+              <br>
+              Finally, we'll look at a fixed div.
+              <div class="fixed-div">
+                <xmp>
+.fixed-div {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height:10em;
+  width: 10em;
+  color: #220679;
+}
+
+</xmp>
+              </div>
+              You may have noticed that there's a little orange rectangle in the bottom left corner of the screen, and it's been there no matter where you are on the page. (Note that the background-color property has been removed from the code sample so that the rest fo the properties all fit within the div). That's how fixed positioning works - it tells the element to go stick to one place in the viewing window and stay there, no matter what.
+
+        </p>
+        <a href="#main-title">Return to top</a>
+        <p class="question" id="inline">
+            What does it mean to display inline vs using inline block? </p>
+            <p class="answer">
+            And finally, we get to some general display options for your HTML elements. The major options are block, inline, and the bastard child of the two, inline-block.
+            <ul>
+              <li><p>Block</p> - block elements take up the full width of their defined space, and do not allow any further elements to the right of them on the page.</li>
+              <li><p>Inline</p> - inline elements take up only the specific space that they require, and allow elements to display to the right of them on the page. Importantly, padding and margin only work side-to-side with inline elements - they won't interrupt the general flow of the text.</li>
+              <li><p>Inline-block</p> - So, this unholy chimera of a display style allows elements to display to the right of it on the page, but it will allow actual dimensions to be set on the element.
+            </ul>
+            So, now, to a display of the types. All of the divs are defined in CSS as 5x5 blocks, with a margin of 0.5em. <br>First up, block:
+            <div class="block-div">Block</div>
+            <div class="block-div">Block</div>
+            Note that the elements are stacked, not displayed horizontally. <br>
+            On to inline:<br>
+            <div class="inline-div">Inline</div>
+            <div class="inline-div">Inline</div><br>
+            Note that, in this case, the height and width definitions have no effect - the elements take up as much room as they need to inline, and that's it. Note also that the inline element allows the next element to be displayed next to it, on the same line.<br>
+            Finally, inline-block:<br>
+            <div class="inline-block-div">Inline-block</div>
+            <div class="inline-block-div">Inline-block</div><br>
+            Note that now, again, the height and width definitions are respected as in a block display declaration. Note also that, like an inline declaration, the elements are allowed to display next to each other on a single line.
+
+            
+        </p>
+        <a href="#main-title">Return to top</a>
+
+        <p>
+        And, that, finally, thankfully, is what I've learned about that in the past week. I hope you've found this entertaining and informative, or at the very least informative. See you next week.
+        </p>
+
+</article>
+</main>
+</body>
+</html>
