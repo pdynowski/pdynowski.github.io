@@ -2,17 +2,17 @@ main aside {
 	display: inline-block;
 	width: 10em;
 	height: auto;
-	background-color: #3810b6;
-	border: .25em solid #593b00;
+	background-color: #222;
+	border: .25em solid #0ff;
 	position: fixed;
-	color: #ffffff;
+	color: #ddd;
 }
 
 main article {
 	display: inline-block;
 	float: right;
 	width: calc(100% - 13em);
-	color: #d48e00;
+	color: #0ff;
 	margin-right: 1em;
 }
 
@@ -28,35 +28,33 @@ aside p {
 }
 
 aside a {
-	color: #ffffff;
+	color: #00f;
 	text-decoration: none;
 	font-size: 1em;
 }
 
 aside a:visited {
-	color: #d48e00;
+	color: #aaa;
 }
 
 article a {
-	color: #ffffff;
+	color: #00f;
 	text-decoration: none;
 }
 
 #main-title {
 	color: #ffffff;
 	font-size: 2.5em;
-	font-family: serif;
 	margin: 0;
 }
 
 #subtitle {
-	color: #ffaa00;
+	color: #00f;
 	font-size: 2em;
-	font-family: serif;
 }
 
 #date {
-	color: #ffaa00;
+	color: #00f;
 	font-style: bold;
 }
 
@@ -66,5 +64,5 @@ article a {
 }
 
 .answer {
-	color: #d48e00;
+	color: #0ff;
 }

@@ -64,7 +64,7 @@
           <xmp>
   #base-div {
   display: inline-block;
-  background-color: #ffffff;
+  background-color: #666;
 }
           </xmp></p>
           <div id="base-div">Base Div</div>
@@ -73,8 +73,8 @@
          <xmp>
   #bordered-div {
     display: inline-block;
-    background-color: #ffffff;
-    border: 5px solid #d48e00;
+    background-color: #666;
+    border: 5px solid #0ff;
   }
         </xmp></p>
         <div id="bordered-div">Bordered Div
@@ -83,9 +83,9 @@
           <xmp>
   #padded-div {
     display: inline-block;
-    background-color: #ffffff;
+    background-color: #666;
     padding: 10px;
-    border: 5px solid #d48e00;
+    border: 5px solid #0ff;
 }
           </xmp>
         </p>
@@ -95,9 +95,9 @@
           <xmp>
   #margin-div {
     display: inline-block;
-    background-color: #ffffff;
+    background-color: #666;
     margin: 20px;
-    border: 5px solid #d48e00;
+    border: 5px solid #0ff
   }
 </xmp></p>
         <div id="margin-div">Margined Div</div>
@@ -120,31 +120,31 @@
               <ul>
                 <li><p>Static</p> - the most basic of the positioning types, static is the default. An element is positioned wherever the HTML interpreter thinks it should go within the flow of the elements. Any element that doesn't manually receive one of the following positioning types is statically positioned.</li>
                 <li><p>Relative</p> - this type of positioning allows you to move an element, defined from a base of the place where the element would have been if statically positioned. </li>
-                <li><p>Absolute</p> - the trickiest of the positioning methods, this defines the position relative to the closest manually positioned ancestor element. If there is no ancestor element that has been manually positioned, absolute positioning is relative to the body of the page. As you may have been able to tell by teh subtitle to this article, absolute positioning is not my favorite.</li>
+                <li><p>Absolute</p> - the trickiest of the positioning methods, this defines the position relative to the closest manually positioned ancestor element. If there is no ancestor element that has been manually positioned, absolute positioning is relative to the body of the page. As you may have been able to tell by the subtitle to this article, absolute positioning is not my favorite.</li>
                 <li><p>Fixed</p> - conceptually, I find this the simplest of the defined positioning types. It sticks the element wherever you tell it to in the viewing window, and the element doesn't stays in one place, regardless of the motion of the page it's on.</li>
               </ul>
 
-              Now, some examples. First, a statically-positioned div (we're looking at the blue square on the orange field, here)
+              Now, some examples. First, a statically-positioned div (we're looking at the cyan square on the gray field, here)
               <div class="background-div">
                 <div class="static-div"></div>
                 <xmp>
 .static-div {
   display: inline-block;
-  background-color: #220679;
+  background-color: #0ff;
   height: 5em;
   width: 5em;
 }
                 </xmp>
               </div>
 
-              This is where the HTML interpreter chose to place the blue square, with no modifications - a static positioning. Next, we'll move on to a relative positioning: 
+              This is where the HTML interpreter chose to place the cyan square, with no modifications - a static positioning. Next, we'll move on to a relative positioning: 
               <div class="background-div">
                 <div class="relative-div"></div>
               
               <xmp>
 .relative-div {
   display: inline-block;
-  background-color: #220679;
+  background-color: #0ff;
   height: 5em;
   width: 5em;
   position: relative;
@@ -154,7 +154,7 @@
               </xmp>
               </div>
 
-              So, with relative positioning, you can see that the blue square has moved relative to where the static positioning would have placed it - in this case, shifted down and to the right. Now, an example of absolute positioning:
+              So, with relative positioning, you can see that the cyan square has moved relative to where the static positioning would have placed it - in this case, shifted down and to the right. Now, an example of absolute positioning:
 
               <div class="background-div">
                 <div class="absolute-div"></div>
@@ -162,7 +162,7 @@
               <xmp>
 .absolute-div {
   display: inline-block;
-  background-color: #220679;
+  background-color: #0ff;
   height: 5em;
   width: 5em;
   position: relative;
@@ -172,7 +172,7 @@
               </xmp>
               </div>
 
-              It should be noted that the background divs have had their position defined (ie, they're not static) so that the absolute positioning of the blue square would be relative to that background - the nearest ancestor that had been manually positioned.<br>
+              It should be noted that the background divs have had their position defined (ie, they're not static) so that the absolute positioning of the cyan square would be relative to that background - the nearest ancestor that had been manually positioned.<br>
               <br>
               Finally, we'll look at a fixed div.
               <div class="fixed-div">
@@ -188,7 +188,7 @@
 
 </xmp>
               </div>
-              You may have noticed that there's a little orange rectangle in the bottom left corner of the screen, and it's been there no matter where you are on the page. (Note that the background-color property has been removed from the code sample so that the rest fo the properties all fit within the div). That's how fixed positioning works - it tells the element to go stick to one place in the viewing window and stay there, no matter what.
+              You may have noticed that there's a little cyan square in the bottom left corner of the screen, and it's been there no matter where you are on the page. (Note that the background-color property has been removed from the code sample so that the rest fo the properties all fit within the div). That's how fixed positioning works - it tells the element to go stick to one place in the viewing window and stay there, no matter what.
 
         </p>
         <a href="#main-title">Return to top</a>
