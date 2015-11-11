@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Arrays and Hashes</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/array.css">
+</head>
+</head>
+
+<body>
+      <header>
+      <img src="../imgs/profile.jpg" alt="My smiling face" class="profile-img">
+      
+      <div id="info">
+        <h1>Paul Dynowski</h1>
+        <h2>Fledgeling Web Developer, All-Around Swell Guy</h2>
+      </div>
+            <p id="links">
+          <a href="#">Portfolio</a>
+                <a href="index.html">Blog</a>
+          <a href="#">About Me</a>
+          <a href="#">Resume</a>
+            </p>    
+        
+            <p id="contacts">
+              Contact Me: 
+          <a href="mailto:paul.dynowski@gmail.com">Email</a>
+          <a href="https://github.com/pdynowski">GitHub</a>
+          <a href="https://www.linkedin.com/pub/paul-dynowski/36/612/48b
+        ">LinkedIn</a>
+          <a href="https://www.facebook.com/paul.dynowski">Facebook</a>
+          <a href="https://twitter.com/pdynowski">Twitter</a>
+            </p>
+    </header>
+
+<main>
+  <aside>
+        <a href="index.html">Blog Index</a>
+        <br>
+        Links to Blog Articles:
+        <ol>
+          <li><a href="git.html">Git and version control</a><br><p>Added 10/22/2015</p></li>
+          <li><a href="css-concepts.html">CSS and styling</a><p>Added 11/6/2015</p></li>
+          <li><a href="arrays-hashes.html">Arrays and Hashes</a><p>Added 11/10/2015</p></li>
+          <li>#4</li>
+          <li>#5</li>
+          <li>#6</li>
+          <li>#7</li>
+        </ol>
+        <a href="http://pdynowski.github.io">Back to main site</a>
+      </aside>
+      <article>
+      <p id="main-title">Ruby and Object Collections</p>
+      <p id="subtitle">Data structures and the answer to the burning questions: "Where did I put that, and how do I get it back?"</p>
+      <p id="date">Nov 10, 2015</p>
+
+        <p class="question">
+          What is an array, exactly?</p>
+          <p class="answer">Well, the dry, technical answer (from <a href="http://docs.ruby-lang.org/en/2.0.0/Array.html">the Ruby language documentation</a>) is that an array is an <q>ordered, integer-indexed collection of any object</q>. Less dryly, it's a list of, well, stuff. What stuff? Anything you like - numbers, strings, objects - heck, even other arrays - can be crammed into a cell of an array, and it'll just sit there, waiting for you to access it. Now, before we get too far into this, let's take a look at a representation of an array:
+            <table>
+              <tr>
+                <td>Value:</td>
+                <td>cat</td>
+                <td>dog</td>
+                <td>bird</td>
+                <td>pig</td>
+                <td>horse</td>
+              </tr>
+              <td>Cell:</td>
+              <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              <tr>
+              </tr>
+            </table>
+            So... what is this? Well, it's an array with 5 cells, containing, in this case, the names of animals. Why animals? Honestly, they were the first thing I thought of. Note, specifically, how the cells are numbered. Computers languages are strange, and don't start counting at one - they start counting at zero!
+        </p>
+        <p class="question">So, then, what about hashes?</p>
+        <p class="answer">
+        Again, the technical answer: <q>A Hash is a dictionary-like collection of unique keys and their values</q>. What's that mean? It's a way to connect values to symbols, and then allow access to those values through those symbols. Let's take a look at one again:
+        <table>
+              <tr>
+                <td>Value:</td>
+                <td>Morris</td>
+                <td>Rex</td>
+                <td>Tweety</td>
+                <td>Porky</td>
+                <td>Rex</td>
+              </tr>
+              <td>Key:</td>
+              <td>:cat</td>
+                <td>:dog</td>
+                <td>:bird</td>
+                <td>:pig</td>
+                <td>:horse</td>
+              <tr>
+              </tr>
+            </table>
+            Now, what's going on here? Basically, we've associated names with each of the animals, and we can look up each name by checking the type of animal. We did not need to use strings as the keys for the hash - any object can be used as a key value (just as any object can be used as the value value).
+        </p>
+        <p class="question">What's the difference?</p>
+        <p class="answer">
+          Well, the main difference to notice between the storage methods is that the value in an array cell is always accessed by integers, while the value in a hash is accessed by referencing the key. Speaking in a very general sense, arrays can often be faster to use, as the data is stored in a much more ordered manner, while hashes are much more flexible. Obviously, there are also differences in the syntax used to initialize, access, and add values to the different methods. Both, however, share the iterator 'each' to allow you to access all the members in storage.
+        </p>
+
+        And so, there's a quick overview of arrays and hashes. Here's a short list of resources that are helpful on this subject.
+        <ul>
+          <li><a href="http://www.sitepoint.com/guide-ruby-collections-part-arrays/">Sitepoint articles</a></li>
+          <li><a href="http://www.tutorialspoint.com/ruby/ruby_arrays.htm">Tutorialspoint articles</a></li>
+          <li><a href="http://docs.ruby-lang.org/en/2.0.0/Array.html">Ruby docs on Array</a></li>
+          <li><a href="http://docs.ruby-lang.org/en/2.0.0/Hash.html">Ruby docs on Hashes</a></li> 
+        </ul>
+
+</article>
+</main>
+</body>
+</html>
