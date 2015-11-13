@@ -28,17 +28,35 @@ aside p {
 }
 
 aside a {
-	color: #00f;
-	text-decoration: none;
+	color: #ff0;
 	font-size: 1em;
 }
 
 aside a:visited {
-	color: #aaa;
+	color: #f00;
+	font-style: oblique;
+	text-decoration: none;
+}
+
+aside a:hover {
+	color: #000;
+	background-color: #ff0;
+	text-decoration: none;
 }
 
 article a {
-	color: #00f;
+	color: #ff0;
+}
+
+article a:visited {
+	color: #f00;
+	font-style: oblique;
+	text-decoration: none;
+}
+
+article a:hover {
+	color: #000;
+	background-color: #ff0;
 	text-decoration: none;
 }
 
