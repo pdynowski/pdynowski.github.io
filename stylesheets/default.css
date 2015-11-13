@@ -25,27 +25,24 @@ main {
     color: #00ffff;
 }
 
-#info {
-    display:block;
-    overflow:hidden;
-    
-}
+
 
 #contacts {
  height: 1.5em;
  margin: 0px;
  position: absolute;
- width: 100%;
+ width: calc(100% - 6.5em);
  left: 6.5em;
  bottom: 0em;
  text-align: left;
 }
 
 #links {
-    width: 100%;
+    width: calc(100% - 11.5em);
     height: 1.5em;
     position: absolute;
     left: 11.5em;
+    bottom: 3em;
     margin: 0;
 }
 
@@ -63,7 +60,8 @@ header h2 {
 }
 
 header p {
- background-color: #0ff;   
+ background-color: #0ff;  
+ vertical-align: middle; 
 }
 
 header a {
@@ -71,19 +69,29 @@ header a {
     color: #000;
     text-align: center;
     display: inline-block;
-    margin: float;
+    position: relative;
+    float: right;
+
+}
+header a:hover {
+    color: #0ff;
+    background-color: #000;
+}
+
+
+header a:visited {
+    font-style: italic;
 }
 
 #links a {
-    width: calc((100% - 11em) / 4);
+    width: calc((100%) / 4);
     height: 1.5em;
 }
 
 #contacts a {
     height: 1.5em;
-    width: calc((100% - 3.5em) / 6);
-    vertical-align: middle;
-    padding-top: 1px;
+    width: calc((100%) /  6);
+
 }
 
 html {
