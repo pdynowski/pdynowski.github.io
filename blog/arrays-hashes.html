@@ -105,7 +105,13 @@
         <p class="answer">
           Well, the main difference to notice between the storage methods is that the value in an array cell is always accessed by integers, while the value in a hash is accessed by referencing the key. Speaking in a very general sense, arrays can often be faster to use, as the data is stored in a much more ordered manner, while hashes are much more flexible. Obviously, there are also differences in the syntax used to initialize, access, and add values to the different methods. Both, however, share the iterator 'each' to allow you to access all the members in storage.
         </p>
-
+         <p class="question">Okay, but why would you use one instead of the other?</p>
+        <p class="answer">
+          Well, in a very basic sense, if you have a list of things that are not associated with another thing apart from the order you got them, an array is probably what you're looking for. If you're associating some pieces of information with other pieces of information, a hash is probably your best bet.<br><br>
+          An example: <br>
+          You, you lucky person, have been elected to go get lunch for everyone from the local sandwich shop. So, you go around the office, collecting everyone's order - Alec wants roast beef on rye, Beth wants turkey and cheddar, and so on. In a sense, what you're doing here is creating a <b>hash</b> - you're associating the sandwich order (your value) with the name of the person who ordered it (your key), so that you can distribute the food accurately when you get back. Make sense? <br>
+          Now, you're at the shop, placing the order (iterating over the hash, returning the values sans keys). The sandwich maker cares not for the names of the people who want the sandwiches, just what sandwiches need to be made. So, the order is sent back: roast beef on rye into cell 0, turkey and cheddar into cell 1...the sandwich maker is making an <b>array</b> (and sandwiches, one would hope) - the only important information is the sandwich order, unassociated with anything else. So, then, the sandwich maker iterates over that array, making the sandwich contained in each cell, and sending you back to work with everyone's order. Which you then distribute by iterating over your hash one more time, matching the sandwiches to the people who ordered them.
+        </p>
         And so, there's a quick overview of arrays and hashes. Here's a short list of resources that are helpful on this subject.
         <ul>
           <li><a href="http://www.sitepoint.com/guide-ruby-collections-part-arrays/">Sitepoint articles</a></li>
