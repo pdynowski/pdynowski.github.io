@@ -1,0 +1,21 @@
+.question {
+	color: #ffffff;
+	font-size: 1.5em;
+}
+
+article a {
+	color: #ff0;
+}
+
+article a:visited {
+	color: #f00;
+	font-style: oblique;
+	text-decoration: none;
+}
+
+article a:hover {
+	color: #000;
+	background-color: #ff0;
+	text-decoration: none;
+}
+

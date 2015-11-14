@@ -98,3 +98,27 @@ html {
     background-color: #222;
     font-family: "Andale Mono", monospace;
 }
+
+article h2 {
+    font-size: 1.5em;
+    color: #fff;
+}
+
+footer {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    height: 1.5em;
+    margin: auto;
+    width: 100%;
+}
+
+a {
+    color: #ff0;
+}
+
+a:hover {
+    color: #000;
+    background-color: #ff0;
+    text-decoration: none;
+}
