@@ -68,7 +68,45 @@
         </p>
         <p class="question">So, what does <i>reduce</i> do?
           </p>
-          <p class="answer">Okay, first things first. <i>reduce</i> is also known as <i>inject</i>. Why? Because Ruby tries to be friendly to people coming from other programming languages, and <i>reduce</i> and <i>inject</i> both did similar things in previous languages, so Ruby implements them both. Now: <br><br>
+          <p class="answer">Okay, first things first. <i>reduce</i> is also known as <i>inject</i>. Why? Because Ruby tries to be friendly to people coming from other programming languages, and <i>reduce</i> and <i>inject</i> both did similar things in previous languages, so Ruby implements them both. Not a big deal, just remember that any time <i>reduce</i> is used in examples below, you can replace it with <i>inject</i> without changing the result. <br><br>
+          Now, to begin with the definition <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reduce">from the docs</a>: <blockquote>[reduce] combines all elements of <i>enum</i> by applying a binary operation, specified by a block or symbol that names a method or operator</blockquote> In English, this means that <i>reduce</i> iterates over each member of your collection, applying a defined (by you) operation to combine the value of the current member with the value currently being tracked by the <i>reduce</i> method, and tracks the result of that operation to be used in the next iteration.
+        </p>
+        <p class="question">Okay. How do I set this magical method up, then?
+          </p>
+          <p class="answer">Oh, there are just so many ways to do it. Well, okay, there are four, which fall into two general categories: ways where you're setting up a basic, repeated use of an arithmetic operator, and ways where you're setting up a block of code to do the operation. Add the ability to set an initial value or not, and you get four, as demonstrated here (all four methods should return the same result):
+            <code>
+array.reduce(:+)
+            </code>
+            <code>
+array.reduce(0,:+)
+            </code>
+            <code>
+array.reduce {
+|total, n| 
+    total + n
+}
+              </code>
+              <code>
+array.reduce(0) { 
+|total, n| 
+    total + n
+}
+              </code>
+        </p>
+         <p class="question">So, what will these do?
+          </p>
+          <p class="answer">In this case, we've set up the reduce method to add up all the elements of our array. In examples two and four, we've additionally set the starting value of the tracking variable to zero. In cases one and three, the tracking variable will be set by the value of the first iteration. So, we'll take as an example a simple array: [2,4,6,8,10]. Now, on the first iteration, the current value will be 2. In the examples where we've defined the initial value, we will perform the operation 0 + 2, and store the value for the next iteration. In the other examples, the first value will simply be set to 2. Now, on the second iteration, our stored value is 2, and we pull 4 as the current value, and add them together to get 6, which will be our value for the third iteration, and so on. In tabular form:
+            <table>
+              <tr>
+                <td>Pass</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+              </tr>
+              <tr>
+                <td>Curr</td><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td>
+              </tr>
+              <tr>
+                <td>Total</td><td>2</td><td>6</td><td>12</td><td>20</td><td>30</td>
+              </tr>
+            </table>
         </p>
 </article>
 </main>
