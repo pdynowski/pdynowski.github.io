@@ -25,6 +25,10 @@ main {
     color: #00ffff;
 }
 
+article {
+    padding-bottom: 1em;
+}
+
 
 
 #contacts {
