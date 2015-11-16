@@ -58,6 +58,18 @@
           </p>
           <p class="answer">Your collections. Basically, your arrays and hashes. We've <a href="arrays-hashes.html">discussed those before</a>, remember? Anyway, "collection" is a general way to refer to arrays or hashes in Ruby (in other languages, you might get to include lists, maps, or dictionaries as types of collections).
         </p>
+        <p class="question">Collections, check. Now, what's this <b>Enumerable</b> thing?
+          </p>
+          <p class="answer"><b>Enumerable</b> is a module which provides all sorts of functionality to the collections in Ruby - basically, it's a defined set of methods that the collections implement and allow you to do some neat things to the collections. (Note that you can also write your own classes that implement <b>Enumerable</b>, but that's a bit deeper into the pool than we're ready to wade just yet.)
+        </p>
+        <p class="question">Like what?
+          </p>
+          <p class="answer">Well...there's a <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html">full list of <b>Enumerable</b> methods</a> in the Ruby documentation. In general, though, there are methods that will return a specific value from the collection (<i>find</i>, etc), methods that will return arrays of values that meet certain conditions from your collection (<i>select</i>, etc), methods that perform an operation on each element of a collection and return the modified collection as a result <i>map</i>, etc), and methods that combine all of the elements of a collection into a single value (<i>reduce</i>). It's this last one that I am going to elaborate on. 
+        </p>
+        <p class="question">So, what does <i>reduce</i> do?
+          </p>
+          <p class="answer">Okay, first things first. <i>reduce</i> is also known as <i>inject</i>. Why? Because Ruby tries to be friendly to people coming from other programming languages, and <i>reduce</i> and <i>inject</i> both did similar things in previous languages, so Ruby implements them both. Now: <br><br>
+        </p>
 </article>
 </main>
 </body>
