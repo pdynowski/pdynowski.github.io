@@ -25,6 +25,10 @@ main {
     color: #00ffff;
 }
 
+article {
+    padding-bottom: 1em;
+}
+
 
 
 #contacts {
@@ -121,4 +125,18 @@ a:hover {
     color: #000;
     background-color: #ff0;
     text-decoration: none;
+}
+
+blockquote {
+    color: #0f0;
+}
+
+table {
+    border: 1px solid #0ff;
+    margin: 1em auto;
+}
+
+td {
+    border: 1px solid #0ff;
+    text-align: center;
 }
