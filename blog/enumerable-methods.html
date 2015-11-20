@@ -69,27 +69,25 @@
         <p class="question">So, what does <i>reduce</i> do?
           </p>
           <p class="answer">Okay, first things first. <i>reduce</i> is also known as <i>inject</i>. Why? Because Ruby tries to be friendly to people coming from other programming languages, and <i>reduce</i> and <i>inject</i> both did similar things in previous languages, so Ruby implements them both. Not a big deal, just remember that any time <i>reduce</i> is used in examples below, you can replace it with <i>inject</i> without changing the result. <br><br>
-          Now, to begin with the definition <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reduce">from the docs</a>: <blockquote>[reduce] combines all elements of <i>enum</i> by applying a binary operation, specified by a block or symbol that names a method or operator</blockquote> In English, this means that <i>reduce</i> iterates over each member of your collection, applying a defined (by you) operation to combine the value of the current member with the value currently being tracked by the <i>reduce</i> method, and tracks the result of that operation to be used in the next iteration.
+          Now, to begin with the definition <a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-reduce">from the docs</a>: <blockquote>[reduce] combines all elements of <i>enum</i> by applying a binary operation, specified by a block or symbol that names a method or operator</blockquote> In English, this means that <i>reduce</i> tracks a single value, and modifies that value by successively combining it with each value in your collection, in a manner which you define. Note that the result of each iteration is the input to the next iteration. In this manner, after you've iterated through your entire collection, you've reduced it to a single value.
         </p>
         <p class="question">Okay. How do I set this magical method up, then?
           </p>
-          <p class="answer">Oh, there are just so many ways to do it. Well, okay, there are four, which fall into two general categories: ways where you're setting up a basic, repeated use of an arithmetic operator, and ways where you're setting up a block of code to do the operation. Add the ability to set an initial value or not, and you get four, as demonstrated here (all four methods should return the same result):
+          <p class="answer">Oh, there are just so many ways to do it. Well, okay, there are four, which fall into two general categories: ways where you're setting up a basic, repeated use of an arithmetic operator, and ways where you're setting up a block of code to do the operation. Add the ability to set an initial value or not, and you get four, as demonstrated here (all four methods should return the same result):<br>
             <code>
-array.reduce(:+)
+a.reduce(:+)
             </code>
             <code>
-array.reduce(0,:+)
+a.reduce(0,:+)
             </code>
             <code>
-array.reduce {
-|total, n| 
-    total + n
+a.reduce {|total,n| <br>
+      total + n<br>
 }
               </code>
               <code>
-array.reduce(0) { 
-|total, n| 
-    total + n
+a.reduce(0) { |total,n| <br>
+      total + n <br>
 }
               </code>
         </p>

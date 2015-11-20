@@ -1,8 +1,8 @@
 code {
 	display: inline-block;
-	width: 20%;
-	text-align: center;
-	margin: 1em 2%;
+	width: calc(100% - 11em)/4;
+	
+	margin: 1em .25em;
 	vertical-align: top;
 }
 
