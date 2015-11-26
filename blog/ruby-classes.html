@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Enumerable Method - reduce</title>
+  <title>Ruby Classes</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css"><link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/enumerable.css">
@@ -50,13 +50,63 @@
         <a href="http://pdynowski.github.io">Back to main site</a>
       </aside>
       <article>
-      <p id="main-title">Enumberable methods</p>
-      <p id="subtitle">Digitally manipulating your collections - and your emotions</p>
-      <p id="date">Nov 12, 2015</p>
+      <p id="main-title">Classes in Ruby</p>
+      <p id="subtitle">Designing blueprints for your objects</p>
+      <p id="date">Nov 26, 2015</p>
 
-        <p class="question">Manipulating my what, now?
+        <p class="question">Objects? Classes? What's going on, here?
           </p>
-          <p class="answer">Your collections. Basically, your arrays and hashes. We've <a href="arrays-hashes.html">discussed those before</a>, remember? Anyway, "collection" is a general way to refer to arrays or hashes in Ruby (in other languages, you might get to include lists, maps, or dictionaries as types of collections).
+          <p class="answer">Most generally, an <i>object</i> is a data
+          structure that contains both data (stored in <i>instance
+          variables</i> in Ruby) and ways to work with that data
+          (<i>methods</i>, in Ruby). A <i>class</i>, then, provides a
+          specific model for an object - it defines the specific data and
+          methods that the object will use when it is <i>instantiated</i>. To
+          follow this one more step, in Ruby, to create an object, you
+          instantiate a class by calling the Class.<i>new</i> method.
+        </p>
+         <p class="question">So, what happens when I call Class.new?
+          </p>
+
+          <p class="answer">Well, the first thing that happens is that space
+          is allocated for the new object - all the variables and methods are
+          assigned a spot in memory. After that, the initialize method from
+          your class definition will be called. Note here that, every time you
+          call Class.new, a different instance of your class will be
+          instantiated - that is, the new object will have an entirely
+          different location memory, and will not (generally) share variables
+          with any other instance of the class.
+
+        </p>
+         <p class="question">Generally?
+          </p>
+
+          <p class="answer">
+
+            There are specific items - called class variables and class
+            methods - that are shared among all instances of a class. For
+            instance, Class.new is actually a class method - all classes are
+            objects of class Class, which provides the #new method to allow
+            Ruby users to create new objects. Also, you may wish to use a
+            class variable to, say, track the total number of instances of the
+            class that the program has instantiated.
+
+        </p>
+        <p class="question">All classes are what now?
+          </p>
+
+          <p class="answer">
+
+            Yeah. They're objects of class Class. It makes sense when you think about it, but I'm not sure how vital it is to know in general.
+
+        </p>
+          <p class="question">...ok. Can you show me one of these classes?
+          </p>
+
+          <p class="answer">
+
+            
+
         </p>
       
 </article>
