@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Classes</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css"><link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/class.css">
+</head>
+
+<body>
+      <header>
+      <img src="../imgs/profile.jpg" alt="My smiling face" class="profile-img">
+      
+      <div id="info">
+        <h1>Paul Dynowski</h1>
+        <h2>Fledgeling Web Developer, All-Around Swell Guy</h2>
+      </div>
+            <p id="links"> 
+          <a href="http://pdynowski.github.io/about-me.html">About Me</a>
+          <a href="#">Resume</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="#">Portfolio</a>
+            </p>    
+        
+            <p id="contacts">
+
+          <a href="https://www.facebook.com/paul.dynowski">Facebook</a>
+          <a href="https://twitter.com/pdynowski">Twitter</a>
+          <a href="https://github.com/pdynowski">GitHub</a>
+          <a href="https://www.linkedin.com/pub/paul-dynowski/36/612/48b
+        ">LinkedIn</a>
+          <a href="mailto:paul.dynowski@gmail.com">Email</a>
+            </p>
+    </header>
+
+<main>
+  <aside>
+        <a href="index.html">Blog Index</a>
+        <br>
+        Links to Blog Articles:
+        <ol>
+          <li><a href="git.html">Git and version control</a><br><p>Added 10/22/2015</p></li>
+          <li><a href="css-concepts.html">CSS and styling</a><p>Added 11/6/2015</p></li>
+          <li><a href="arrays-hashes.html">Arrays and Hashes</a><p>Added 11/10/2015</p></li>
+          <li><a href="accessibility.html">Accessible Design</a><p>Added 11/12/2015</p></li>
+          <li><a href="enumerable-methods.html">Enumerable Methods - reduce</a><p>Added 11/16/2015</p></li>
+          <li><a href="ruby-classes.html">Ruby Classes</a><p>Added 11/26/2015</p></li>
+          <li>#7</li>
+        </ol>
+        <a href="http://pdynowski.github.io">Back to main site</a>
+      </aside>
+      <article>
+      <p id="main-title">Classes in Ruby</p>
+      <p id="subtitle">Designing blueprints for your objects</p>
+      <p id="date">Nov 26, 2015</p>
+
+        <p class="question">Objects? Classes? What's going on, here?
+          </p>
+          <p class="answer">Most generally, an <i>object</i> is a data
+          structure that contains both data (stored in <i>instance
+          variables</i> in Ruby) and ways to work with that data
+          (<i>methods</i>, in Ruby). A <i>class</i>, then, provides a
+          specific model for an object - it defines the specific data and
+          methods that the object will use when it is <i>instantiated</i>. To
+          follow this one more step, in Ruby, to create an object, you
+          instantiate a class by calling the Class.<i>new</i> method.
+        </p>
+         <p class="question">So, what happens when I call Class.new?
+          </p>
+
+          <p class="answer">Well, the first thing that happens is that space
+          is allocated for the new object - all the variables and methods are
+          assigned a spot in memory. After that, the initialize method from
+          your class definition will be called. Note here that, every time you
+          call Class.new, a different instance of your class will be
+          instantiated - that is, the new object will have an entirely
+          different location memory, and will not (generally) share variables
+          with any other instance of the class.
+
+        </p>
+         <p class="question">Generally?
+          </p>
+
+          <p class="answer">
+
+            There are specific items - called class variables and class
+            methods - that are shared among all instances of a class. For
+            instance, Class.new is actually a class method - all classes are
+            objects of class Class, which provides the #new method to allow
+            Ruby users to create new objects. Also, you may wish to use a
+            class variable to, say, track the total number of instances of the
+            class that the program has instantiated.
+
+        </p>
+        <p class="question">All classes are what now?
+          </p>
+
+          <p class="answer">
+
+            Yeah. They're objects of class Class. It makes sense when you
+            think about it, but I'm not sure how vital it is to know in
+            general.
+
+        </p>
+          <p class="question">...ok. Can you show me one of these classes?
+          </p>
+
+          <p class="answer">
+
+            Oh, if you insist. As I sit here, I'm staring at a wall covered in
+            books, so, let's make a book class. And, since we're a tech-savvy
+            crowd, let's make it an e-book. So, we're going to assume that we
+            have a representation of the book in memory, for these
+            purposes.<br><br>
+
+            What do we need to know? Probably, we'd like to track the author,
+            title, and number of pages in a book. Also the page of the book
+            we're on. Maybe, we'd even like to track the last time we read a
+            page. These will be our instance variables. We'll throw a class
+            variable in, as well - we'll track our total number of books.Sound
+            good?<br><br>
+
+            Ok. On to methods - we'd like to be able to see the information
+            about the book, and to display the text from the current page.
+            We'd also like to be able to select a page to see, and to turn the
+            pages forward and backward. Finally, being able to open and close
+            the book seems like a solid idea. So, let's look at what we have:
+              
+              <div id="codeblock"><pre><code>
+class Book
+
+  @@book_count
+  @information
+  @current_page
+  @last_time_read
+
+  def initialize(book_title, book_author, number_pages)
+    @@book_count +=1
+    @information = {title: book_title, author: book_author, pages: number_pages}
+    @current_page = 0
+    @last_time_read = 0
+  end
+
+  attr_reader :information, :current_page
+
+  def display(page)
+    p #code to retrieve page from memory
+  end
+
+  def turn_to(page)
+    @current_page = page
+    display(current_page)
+  end
+
+  def page_forward
+    @current_page += 1
+    display(@current_page)
+  end
+
+  def page_backward
+    @current_page -=1
+    display(@current_page)
+  end
+
+  def open_book
+    display(current_page)
+  end
+
+  def close_book
+    @last_time_read = #code to insert current time
+  end
+
+end
+            </code></pre></div>
+
+            <p class="question">Can we review this a bit?
+          </p>
+
+          <p class="answer">
+
+            Sure. Each book we initialize - each <i>instance</i> of class Book
+            - have several variables relating only to that instance; i.e.,
+            instance variables. In our Book class, our instance variables are
+            the information hash, the current page, and the last time the book
+            was read. These are important pieces of information for each book,
+            but the information for <u>Jurassic Park</u> doesn't matter at all
+            for <u>Guns, Germs, and Steel</u>, and vice-versa. Instance
+            methods, now - all the things defined in def...end blocks - are
+            what you use to control the behavior of an instantiated book
+            object; they don't work unless you've created a book object for
+            them to work on. 
+
+        </p>
+        
+            Crystal clear, I hope. Thanks for reading this far, and please let
+            me know if I've made any mistakes, left anything vital out, or in
+            any other way muddled the issue.
+
+        </p>
+      
+</article>
+</main>
+</body>
+</html>
