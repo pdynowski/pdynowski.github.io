@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objects in JavaScript</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/js.css">
+</head>
+
+<body>
+      <header>
+      <img src="../imgs/profile.jpg" alt="My smiling face" class="profile-img">
+      
+      <div id="info">
+        <h1>Paul Dynowski</h1>
+        <h2>Fledgeling Web Developer, All-Around Swell Guy</h2>
+      </div>
+            <p id="links"> 
+          <a href="http://pdynowski.github.io/about-me.html">About Me</a>
+          <a href="#">Resume</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="#">Portfolio</a>
+            </p>    
+        
+            <p id="contacts">
+         
+          <a href="https://www.facebook.com/paul.dynowski">Facebook</a>
+          <a href="https://twitter.com/pdynowski">Twitter</a>
+          <a href="https://github.com/pdynowski">GitHub</a>
+          <a href="https://www.linkedin.com/pub/paul-dynowski/36/612/48b
+        ">LinkedIn</a>
+          <a href="mailto:paul.dynowski@gmail.com">Email</a>
+            </p>
+    </header>
+
+<main>
+  <aside>
+        <a href="index.html">Blog Index</a>
+        <br>
+        Links to Blog Articles:
+        <ol>
+          <li><a href="git.html">Git and version control</a><br><p>Added 10/22/2015</p></li>
+          <li><a href="css-concepts.html">CSS and styling</a><p>Added 11/6/2015</p></li>
+          <li><a href="arrays-hashes.html">Arrays and Hashes</a><p>Added 11/10/2015</p></li>
+          <li><a href="accessibility.html">Accessible Design</a><p>Added 11/12/2015</p></li>
+          <li><a href="enumerable-methods.html">Enumerable Methods</a><p>Added 11/16/2015</p></li>
+          <li><a href="ruby-classes.html">Ruby Classes</a><p>Added 11/26/2015</p></li>
+          <li><a href="JavaScript.html">JavaScript Objects</a><p>Added 12/3/2015</li>
+        </ol>
+        <a href="http://pdynowski.github.io">Back to main site</a>
+      </aside>
+      <article>
+      <p id="main-title">JavaScript Objects vs. Ruby Hashes</p>
+      <p id="subtitle">One of these things is...well, quite a bit like the other, actually</p>
+      <p id="date">Nov 12, 2015</p>
+
+        <p class="question">What's an object in JavaScript, and how does it work?
+          </p>
+          <p class="answer">An object, in JavaScript, is an unordered list of data stored as a series of name-value pairs. The name can technically be either a string or a number, but it is generally best to avoid using numbers as a name. Values can be...well, strings, numbers, or other objects. Look at a sample:
+            <pre><code class="codeblock">var video_game = {
+  title: "Crusader Kings II",
+  genre: "Grand Strategy",
+  publisher: "Paradox Interactive"
+}</code></pre> This is the object literal method for creating objects - probably the most common way that you will create them. 
+        </p>
+        <p class="question">Hey, wait a minute...that looks an awful lot like...
+          </p>
+          <p class="answer">Yup. That, my friends, looks pretty much just like the implicit form for creating a symbol-based Hash in Ruby. Really, the only difference is that Ruby doesn't need the "var" declaration; other than that, it looks precisely the same.
+        </p>
+         <p class="question">Are there any differences, then?
+          </p>
+          <p class="answer">Of course there are. Coding wouldn't be fun without the wondrous variety of language, now would it? Some of the differences are:
+            <ul>
+              <li>JS object properties can be accessed with a dot operator
+                <pre><code class="codeblock">console.log(video_game.title)
+=> "Crusader Kings II"
+                </code></pre> or, like Ruby, with a key reference:
+                <pre><code class="codeblock">console.log(video_game[title])
+=> "Crusader Kings II"</code></pre>The second method is much more useful when iterating over the properties of an object.
+              </li>
+              <li>Object Constructors. These look a bit like Ruby class definitions - in other words, very different from the way Ruby hashes operate. So, say I knew I was going to make the above object for a bunch of video games; I might create a constructor that looked like this:<pre><code class="codeblock">function VideoGame(title, genre, publisher) {
+  this.title = title;
+  this.genre = genre;
+  this.publisher = publisher;
+}
+var video_game = new VideoGame("Crusader Kings II", "Grand Strategy", "Paradox Interactive");
+</code></pre> Note the "this" keyword - it basically serves the same function as the "@" sign in a Ruby class - defining the equivalent to an instance variable. Notably, however, the object constructor is incomplete when compared to a Ruby class definition, as it doesn't include methods for working with the data. It <i>can</i> include them, but they are more properly included in the object prototype...however, we're now getting a bit far afield from our stated comparison of Objects to Hashes.</li>
+              <li>Object functions - the value in a name/value pair in a JS object can be a function, which can then be retrieved like any other value. So, here we'll add an example function to our video game object:<pre><code class="codeblock">video_game.writeInfo = function() {
+  console.log(this.name + " is a " + this.genre + " game published by " + this.publisher);
+}
+video_game.writeInfo;
+=>"Crusader Kings II is a Grand Strategy game published by Paradox Interactive"</code></pre> Again, this is something that, if it belongs to an object that will be used heavily, should be included in the prototype. Which is still outside the scope of this post.</li>
+            </ul>
+        </p>
+<p class="question">So, in summary...
+          </p>
+          <p class="answer">Objects in JavaScript are quite a lot like hashes in Ruby, and can be used as such, if you'd like. However, they're really much more flexible than that, with the ability to be expanded into something that much more closely resembles a Ruby class.
+        </p>
+        
+
+
+</article>
+</main>
+</body>
+</html>

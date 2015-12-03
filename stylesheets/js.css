@@ -1,0 +1,11 @@
+.codeblock {
+  width: 98%;
+  margin: 1%;
+  color: yellow;
+  display: block;
+  float: left;
+}
+
+article li {
+  margin: 1%;
+}
