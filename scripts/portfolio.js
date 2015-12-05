@@ -1,0 +1,4 @@
+$(document).ready(function() {
+  document.getElementById("testarea").innerHTML = "HELLO THERE JADIAHGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  console.log("loading");
+});
