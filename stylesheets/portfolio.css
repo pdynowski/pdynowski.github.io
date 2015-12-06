@@ -15,10 +15,9 @@
   display: block;
 }
 
-#thumbnail:before {
-  content: "";
-  display: block;
-  padding-top: 60%;
+
+#thumbnail img {
+  width: 100%;
 }
 
 
@@ -29,4 +28,9 @@ main {
 
 main article {
   padding: 0em;
+}
+
+.current {
+  background-color: #ff0;
+  color: #000;
 }
