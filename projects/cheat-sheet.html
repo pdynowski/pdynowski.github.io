@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby Enumerables Cheat Sheet</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+  </head> 
+
+  <body>
+
+    <table id="single-value">
+      <caption>Enumerable Methods Returning Boolean Value</caption>
+      <tr>
+        <th>Method</th>
+        <th>Description</th>
+        <th>Code Block</th>
+      </tr>
+      <tr>
+        <td>all?</td>
+        <td>Checks if all values in collection pass a test</td>
+        <td>collection.all? { |item| item.property == prop }</td>
+      </tr>
+      <tr>
+        <td>any?</td>
+        <td>Checks if at least one value in a collection passes a test</td>
+        <td>collection.any? { |item| item.property == prop }</td>
+      </tr>
+    </table>    
+
+    cycle, lazy
+
+    <br>Methods that return a single value<br>
+    count, detect/find, find_index, include?/member?, inject/reduce, max, max_by,
+    min, min_by, none?, one?, 
+
+
+    <br>Methods that do something to every element in an array or object<br>
+    each_entry, each_with_index, reverse_each
+
+
+    <br>Methods that return a subset(s) of the array or object<br>
+
+    chunk, each_cons, each_slice, first, group_by, partition, slice_after,
+    slice_before, slice_when, take, take_while
+
+
+   <br> Methods that return a new array<br>
+    collect/map, collect_concat/flat_map, drop, drop_while, entires/to_a, find_all,
+    grep, minmax, minmax_by, reject, select, sort, sort_by, to_h, zip
+
+  </body>
+  </html>
