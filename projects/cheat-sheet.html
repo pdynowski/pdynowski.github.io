@@ -13,18 +13,31 @@
       <caption>Enumerable Methods Returning Boolean Value</caption>
       <tr>
         <th>Method</th>
-        <th>Description</th>
-        <th>Code Block</th>
+        <th>Result</th>
       </tr>
       <tr>
-        <td>all?</td>
-        <td>Checks if all values in collection pass a test</td>
-        <td>collection.all? { |item| item.property == prop }</td>
+        <td>all? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if all no item in the collection returns <b>false</b> or <b>nil</b></td>
       </tr>
       <tr>
-        <td>any?</td>
-        <td>Checks if at least one value in a collection passes a test</td>
-        <td>collection.any? { |item| item.property == prop }</td>
+        <td>any? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if any item returns a result <i>other than</i> <b>false</b> or <b>nil</b></td>
+      </tr>
+       <tr>
+        <td>include? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if any item in the collection returns <b>true</b></td>
+      </tr>
+       <tr>
+        <td>member? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if any item in the collection returns <b>true</b></td>
+      </tr>
+      <tr>
+        <td>none? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if no item in the collection returns <b>true</b></td>
+      </tr>
+       <tr>
+        <td>one? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if <i>exactly one</i> item in the collection returns <b>true</b></td>
       </tr>
     </table>    
 
