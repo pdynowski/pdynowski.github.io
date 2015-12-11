@@ -8,6 +8,25 @@
   </head> 
 
   <body>
+    <table id="creation">
+      <caption>Methods for Creating Collections</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>entries(*args)</td>
+        <td>Returns an <b>array</b> containing the items in <i>enum</i></td> 
+      </tr>
+       <tr>
+        <td>to_a(*args)</td>
+        <td>Returns an <b>array</b> containing the items in <i>enum</i></td> 
+      </tr>
+      <tr>
+        <td>to_h(*args)</td>
+        <td>Returns a <b>hash</b> containing the result of interpreting <i>enum</i> as a list of key-value pairs</td> 
+      </tr>
+    </table>
 
     <table id="boolean-value">
       <caption>Enumerable Methods Returning Boolean Value</caption>
@@ -40,6 +59,40 @@
         <td>Returns <b>true</b> if <i>exactly one</i> item in the collection returns <b>true</b></td>
       </tr>
     </table>    
+
+    <table id="single-value">
+      <caption>Enumerable Methods Returning Single Value</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>count</td>
+        <td>Returns total count of elements</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>count(value)</td>
+        <td>Returns total count of elements equal to <i>value</i></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>count { |x| <i>block</i> }</td>
+        <td>Returns total count of elements where block returns <b>true</b></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>inject { |memo, x| <i>block</i> }</td>
+        <td>Combines all elements by applying block to memo (return value from last iteration) and new element.</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>reduce { |memo, x| <i>block</i> }</td>
+        <td>Combines all elements by applying block to memo (return value from last iteration) and new element.</td>
+        <td>yes</td>
+      </tr>
+    </table>
 
     <table id="single-element">
       <caption>Enumerable Methods Returning Single Element</caption>
@@ -253,23 +306,102 @@
       </tr>
     </table>
 
-    cycle, lazy
+    <table>
+      <caption>Iterative Enumerable Methods</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+       <tr>
+        <td>cycle(n=nil) { |object| <i>block</i> }</td>
+        <td>Calls block for each element of the collection <i>n</i> times, or forever if nil is used as the parameter. Returns <b>nil</b> if cycle completes without being interrupted. </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_cons(n) { <i>block</i> }</td>
+        <td>Iterates over the given block for each subarray of <i>n</i> consecutive elements. Returns <b>nil</b>  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_entry { |object| <i>block</i> }</td>
+        <td>Calls block once for each element.  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_slice(n) { <i>block</i> }</td>
+        <td>Iterates over the given block for each slice of <i>n</i> elements. Returns <b>nil</b>  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_with_index(*args) { |element, index| <i>block</i> }</td>
+        <td>Calls block for each entry and their indices. Args are passed into #each.</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>reverse_each { <i>block</i> }</td>
+        <td>Calls block once for each element, in reverse order.</td>
+        <td>yes</td>
+      </tr>
+    </table>
 
-    <br>Methods that return a single value<br>
-    count, inject/reduce
-
-
-    <br>Methods that do something to every element in an array or object<br>
-    each_entry, each_with_index, reverse_each
-
-
-    <br>Methods that return a subset(s) of the array or object<br>
-
-    chunk, each_cons, each_slice
+    <table>
+      <caption>Enumerable Methods Returning Arrays</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+       <tr>
+        <td>collect { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>collect_concat { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the concatenated results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>flat_map { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the concatenated results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>map { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>sort</td>
+        <td>Returns an <b>array</b> containing the items in the collection sorted by their own <=> method</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>sort { |a,b| <i>block</i> }</td>
+        <td>Returns an <b>array</b> containing the items in the collection sorted by the results of the supplied block</td>
+        <td></td>
+      </tr>
+        <tr>
+        <td>sort_by { |object| <i>block</i> }</td>
+        <td>Sorts the collection using the results of running each object through the given code block</td>
+        <td>yes</td>
+      </tr>
+        <tr>
+        <td>zip(arg,...)</td>
+        <td>Returns an <b>array of arrays</b>, each array consisting of the <i>n</i>th element of the argument collections.</td>
+        <td>yes</td>
+      </tr>
+        <tr>
+        <td>zip(arg,...) { |arr| <i>block</i> }</td>
+        <td>Code block is invoked for each output array from the above zip invocation. <b>Nil</b> is returned</td>
+        <td>yes</td>
+      </tr>
+    </table>
 
 
    <br> Methods that return a new array<br>
-    collect/map, collect_concat/flat_map, entires/to_a, sort, sort_by, to_h, zip
+    sort, sort_by, zip
 
   </body>
   </html>
