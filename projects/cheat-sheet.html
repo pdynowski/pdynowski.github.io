@@ -68,6 +68,11 @@
         <td>Returns the <b>index</b> for the first entry for which the test does not return <b>false</b>. If no such entry, returns <b>nil</b></td>
         <td>yes</td>
       </tr>
+      <tr>
+        <td>first</td>
+        <td>Returns the first <b>object</b> in the collection</td>
+        <td></td>
+      </tr>
        <tr>
         <td>max</td>
         <td>Returns the <b>object</b> with the highest value according to <code>Comparable</code></td>
@@ -122,7 +127,76 @@
         <th>Result</th>
         <th>Able to return enumerator?</th>
       </tr>
-
+      <tr>
+        <td>drop(n) </td>
+        <td>Returns an <b>array</b> containing all elements of the collection <i>after</i> the first <i>n</i></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>drop_while { |item| <i>block</i> } </td>
+        <td>Drops elements up to, but not including, the first time the code block returns <b>nil</b> or <b>false</b>. Returns an <b>array</b> containing the remaining elements</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>find_all { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>true</b> value</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>first(n)</td>
+        <td>Returns the first <i>n</i> <b>objects</b> in the collection</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max(n)</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the highest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max(n) { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the highest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max_by(n) { |item| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>elements</b> with the highest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>min(n)</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the lowest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min(n) { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the lowest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min_by(n) { |item| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>elements</b> with the lowest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>reject { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>false</b> value</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>select { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>true</b> value</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>take(n)</td>
+        <td>Returns the first <i>n</i> <b>objects</b> in the collection</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>take_while { |item| <i>test</i> }</td>
+        <td>Returns an <b>array</b> of all elements in the collection prior to the first time the test block returns <b>nil</b> or <b>false</b></td>
+        <td></td>
+      </tr>
     </table>
 
     cycle, lazy
@@ -137,13 +211,13 @@
 
     <br>Methods that return a subset(s) of the array or object<br>
 
-    chunk, each_cons, each_slice, first, group_by, partition, slice_after,
+    chunk, each_cons, each_slice, group_by, partition, slice_after,
     slice_before, slice_when, take, take_while
 
 
    <br> Methods that return a new array<br>
     collect/map, collect_concat/flat_map, drop, drop_while, entires/to_a, find_all,
-    grep, minmax, minmax_by, reject, select, sort, sort_by, to_h, zip
+    grep, sort, sort_by, to_h, zip
 
   </body>
   </html>
