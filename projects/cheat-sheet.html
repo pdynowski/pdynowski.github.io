@@ -135,7 +135,7 @@
       <tr>
         <td>drop_while { |item| <i>block</i> } </td>
         <td>Drops elements up to, but not including, the first time the code block returns <b>nil</b> or <b>false</b>. Returns an <b>array</b> containing the remaining elements</td>
-        <td></td>
+        <td>yes</td>
       </tr>
       <tr>
         <td>find_all { |item| <i>test</i> } </td>
@@ -145,6 +145,11 @@
        <tr>
         <td>first(n)</td>
         <td>Returns the first <i>n</i> <b>objects</b> in the collection</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>grep(pattern)</td>
+        <td>Returns an <b>array</b> of elements where pattern === element</td>
         <td></td>
       </tr>
       <tr>
@@ -195,7 +200,56 @@
        <tr>
         <td>take_while { |item| <i>test</i> }</td>
         <td>Returns an <b>array</b> of all elements in the collection prior to the first time the test block returns <b>nil</b> or <b>false</b></td>
-        <td></td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table id="subsets">
+      <caption>Enumerable Methods Returning Subsets</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>chunk { |item| <i>test</i> }</td>
+        <td>Returns an <b>enumerator</b> that split a collection by items that return the same block value </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>group_by { |item| <i>block</i> }</td>
+        <td>Returns a <b>hash</b> where the keys are the evaluated results from the block and the values are arrays of the elements that returned each of the evaluated results</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>partition { |item| <i>test</i> }</td>
+        <td>Returns an <b>array</b> consisting of two arrays, the first with elements that returned <b>true</b> for the test block, the second with those that returned <b>false</b></td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>slice_after(pattern)</td>
+        <td>Returns an <b>enumerator</b>; a value that matches the pattern marks the last element in a chunk </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_after { |item| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> marks the last element in a chunk  </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_before(pattern)</td>
+        <td>Returns an <b>enumerator</b>; a value that matches the pattern marks the first element in a chunk </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_before { |item| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> marks the first element in a chunk  </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_when { |item1, item2| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> means that <i>item1</i> is the last item in one chunk and <i>item2</i> is the first element in the next  </td>
+        <td>only</td>
       </tr>
     </table>
 
@@ -211,13 +265,11 @@
 
     <br>Methods that return a subset(s) of the array or object<br>
 
-    chunk, each_cons, each_slice, group_by, partition, slice_after,
-    slice_before, slice_when, take, take_while
+    chunk, each_cons, each_slice
 
 
    <br> Methods that return a new array<br>
-    collect/map, collect_concat/flat_map, drop, drop_while, entires/to_a, find_all,
-    grep, sort, sort_by, to_h, zip
+    collect/map, collect_concat/flat_map, entires/to_a, sort, sort_by, to_h, zip
 
   </body>
   </html>

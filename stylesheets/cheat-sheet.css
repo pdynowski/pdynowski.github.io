@@ -23,3 +23,7 @@ table#single-element{
 table#multiple-elements{
   background-color:#c04000;
 }
+
+table#subsets{
+  background-color:cyan;
+}
