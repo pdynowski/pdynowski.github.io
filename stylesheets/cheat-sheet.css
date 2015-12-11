@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+  margin: auto;
+}
+
+caption {
+  font-size: 2em;
+}
+
+table, th, tr, td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table#boolean-value{
+  background-color:green;
+}
+
+table#single-element{
+  background-color:orange;
+}
+
+table#multiple-elements{
+  background-color:#c04000;
+}
+
+table#subsets{
+  background-color:cyan;
+}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby Enumerables Cheat Sheet</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+  </head> 
+
+  <body>
+    <table id="creation">
+      <caption>Methods for Creating Collections</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>entries(*args)</td>
+        <td>Returns an <b>array</b> containing the items in <i>enum</i></td> 
+      </tr>
+       <tr>
+        <td>to_a(*args)</td>
+        <td>Returns an <b>array</b> containing the items in <i>enum</i></td> 
+      </tr>
+      <tr>
+        <td>to_h(*args)</td>
+        <td>Returns a <b>hash</b> containing the result of interpreting <i>enum</i> as a list of key-value pairs</td> 
+      </tr>
+    </table>
+
+    <table id="boolean-value">
+      <caption>Enumerable Methods Returning Boolean Value</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td>all? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if <i>no</i> item in the collection returns <b>false</b> or <b>nil</b></td>
+      </tr>
+      <tr>
+        <td>any? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if any item returns a result <i>other than</i> <b>false</b> or <b>nil</b></td>
+      </tr>
+       <tr>
+        <td>include?(value)</td>
+        <td>Returns <b>true</b> if <i>any</i> item in the collection == value</td>
+      </tr>
+       <tr>
+        <td>member?(value)</td>
+        <td>Returns <b>true</b> if <i>any</i> item in the collection == value</td>
+      </tr>
+      <tr>
+        <td>none? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if <i>no</i> item in the collection returns <b>true</b></td>
+      </tr>
+       <tr>
+        <td>one? { |item| <i>test</i> }</td>
+        <td>Returns <b>true</b> if <i>exactly one</i> item in the collection returns <b>true</b></td>
+      </tr>
+    </table>    
+
+    <table id="single-value">
+      <caption>Enumerable Methods Returning Single Value</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>count</td>
+        <td>Returns total count of elements</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>count(value)</td>
+        <td>Returns total count of elements equal to <i>value</i></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>count { |x| <i>block</i> }</td>
+        <td>Returns total count of elements where block returns <b>true</b></td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>inject { |memo, x| <i>block</i> }</td>
+        <td>Combines all elements by applying block to memo (return value from last iteration) and new element.</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>reduce { |memo, x| <i>block</i> }</td>
+        <td>Combines all elements by applying block to memo (return value from last iteration) and new element.</td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table id="single-element">
+      <caption>Enumerable Methods Returning Single Element</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>detect(ifnone = nil) { |item| <i>test</i> }</td>
+        <td>Returns first entry for which the test does not return <b>false</b>. If no such entry, returns <b>ifnone</b> result - <b>nil</b>, by default</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find(ifnone = nil) { |item| <i>test</i> }</td>
+        <td>Returns first entry for which the test does not return <b>false</b>. If no such entry, returns <b>ifnone</b> result - <b>nil</b>, by default</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find_index(<i>value</i>)</td>
+        <td>Returns the <b>index</b> for the first entry for which the value matches the argument. If no such entry, returns <b>nil</b>.</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find_index { |item| <i>test</i> }</td>
+        <td>Returns the <b>index</b> for the first entry for which the test does not return <b>false</b>. If no such entry, returns <b>nil</b></td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>first</td>
+        <td>Returns the first <b>object</b> in the collection</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>max</td>
+        <td>Returns the <b>object</b> with the highest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <b>object</b> with the highest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max_by { |item| <i>comparison</i>}</td>
+        <td>Returns the <b>element</b> with the highest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>min</td>
+        <td>Returns the <b>object</b> with the lowest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <b>object</b> with the lowest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min_by { |item| <i>comparison</i>}</td>
+        <td>Returns the <b>element</b> with the lowest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>minmax</td>
+        <td>Returns an <b>array</b> containing the objects with the highest and lowest values according to <code>Comparable</code> => [min, max]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>minmax { |a, b| <i>comparison</i>}</td>
+        <td>Returns an <b>array</b> containing the objects with the highest and lowest values according to comparison block => [min, max]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>minmax_by { |item| <i>comparison</i>}</td>
+        <td>Returns an <b>array</b> containing the elements with the lowest value according to comparison block => [min, max]</td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table id="multiple-elements">
+      <caption>Enumerable Methods Returning Multiple Elements</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>drop(n) </td>
+        <td>Returns an <b>array</b> containing all elements of the collection <i>after</i> the first <i>n</i></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>drop_while { |item| <i>block</i> } </td>
+        <td>Drops elements up to, but not including, the first time the code block returns <b>nil</b> or <b>false</b>. Returns an <b>array</b> containing the remaining elements</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find_all { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>true</b> value</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>first(n)</td>
+        <td>Returns the first <i>n</i> <b>objects</b> in the collection</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>grep(pattern)</td>
+        <td>Returns an <b>array</b> of elements where pattern === element</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max(n)</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the highest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max(n) { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the highest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max_by(n) { |item| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>elements</b> with the highest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>min(n)</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the lowest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min(n) { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>objects</b> with the lowest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min_by(n) { |item| <i>comparison</i>}</td>
+        <td>Returns the <i>n</i> <b>elements</b> with the lowest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>reject { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>false</b> value</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>select { |item| <i>test</i> } </td>
+        <td>Returns an <b>array</b> containing all elements of the collection for which the given test block returns a <b>true</b> value</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>take(n)</td>
+        <td>Returns the first <i>n</i> <b>objects</b> in the collection</td>
+        <td></td>
+      </tr>
+       <tr>
+        <td>take_while { |item| <i>test</i> }</td>
+        <td>Returns an <b>array</b> of all elements in the collection prior to the first time the test block returns <b>nil</b> or <b>false</b></td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table id="subsets">
+      <caption>Enumerable Methods Returning Subsets</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>chunk { |item| <i>test</i> }</td>
+        <td>Returns an <b>enumerator</b> that split a collection by items that return the same block value </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>group_by { |item| <i>block</i> }</td>
+        <td>Returns a <b>hash</b> where the keys are the evaluated results from the block and the values are arrays of the elements that returned each of the evaluated results</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>partition { |item| <i>test</i> }</td>
+        <td>Returns an <b>array</b> consisting of two arrays, the first with elements that returned <b>true</b> for the test block, the second with those that returned <b>false</b></td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>slice_after(pattern)</td>
+        <td>Returns an <b>enumerator</b>; a value that matches the pattern marks the last element in a chunk </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_after { |item| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> marks the last element in a chunk  </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_before(pattern)</td>
+        <td>Returns an <b>enumerator</b>; a value that matches the pattern marks the first element in a chunk </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_before { |item| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> marks the first element in a chunk  </td>
+        <td>only</td>
+      </tr>
+      <tr>
+        <td>slice_when { |item1, item2| <i>boolean</i></td>
+        <td>Returns an <b>enumerator</b>; a boolean block that returns <b>true</b> means that <i>item1</i> is the last item in one chunk and <i>item2</i> is the first element in the next  </td>
+        <td>only</td>
+      </tr>
+    </table>
+
+    <table>
+      <caption>Iterative Enumerable Methods</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+       <tr>
+        <td>cycle(n=nil) { |object| <i>block</i> }</td>
+        <td>Calls block for each element of the collection <i>n</i> times, or forever if nil is used as the parameter. Returns <b>nil</b> if cycle completes without being interrupted. </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_cons(n) { <i>block</i> }</td>
+        <td>Iterates over the given block for each subarray of <i>n</i> consecutive elements. Returns <b>nil</b>  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_entry { |object| <i>block</i> }</td>
+        <td>Calls block once for each element.  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_slice(n) { <i>block</i> }</td>
+        <td>Iterates over the given block for each slice of <i>n</i> elements. Returns <b>nil</b>  </td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>each_with_index(*args) { |element, index| <i>block</i> }</td>
+        <td>Calls block for each entry and their indices. Args are passed into #each.</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>reverse_each { <i>block</i> }</td>
+        <td>Calls block once for each element, in reverse order.</td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table>
+      <caption>Enumerable Methods Returning Arrays</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+       <tr>
+        <td>collect { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>collect_concat { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the concatenated results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>flat_map { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the concatenated results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>map { |object| <i>block</i> }</td>
+        <td>Returns a new <b>array</b> with the results of running the block once for each object</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>sort</td>
+        <td>Returns an <b>array</b> containing the items in the collection sorted by their own <=> method</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>sort { |a,b| <i>block</i> }</td>
+        <td>Returns an <b>array</b> containing the items in the collection sorted by the results of the supplied block</td>
+        <td></td>
+      </tr>
+        <tr>
+        <td>sort_by { |object| <i>block</i> }</td>
+        <td>Sorts the collection using the results of running each object through the given code block</td>
+        <td>yes</td>
+      </tr>
+        <tr>
+        <td>zip(arg,...)</td>
+        <td>Returns an <b>array of arrays</b>, each array consisting of the <i>n</i>th element of the argument collections.</td>
+        <td>yes</td>
+      </tr>
+        <tr>
+        <td>zip(arg,...) { |arr| <i>block</i> }</td>
+        <td>Code block is invoked for each output array from the above zip invocation. <b>Nil</b> is returned</td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+
+   <br> Methods that return a new array<br>
+    sort, sort_by, zip
+
+  </body>
+  </html>
