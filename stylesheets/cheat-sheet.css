@@ -1,6 +1,10 @@
 table {
   width: 100%;
+  margin: auto;
+}
 
+caption {
+  font-size: 2em;
 }
 
 table, th, tr, td {
@@ -8,6 +12,14 @@ table, th, tr, td {
   text-align: center;
 }
 
-table#single-value{
+table#boolean-value{
   background-color:green;
+}
+
+table#single-element{
+  background-color:orange;
+}
+
+table#multiple-elements{
+  background-color:#c04000;
 }

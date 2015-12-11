@@ -9,7 +9,7 @@
 
   <body>
 
-    <table id="single-value">
+    <table id="boolean-value">
       <caption>Enumerable Methods Returning Boolean Value</caption>
       <tr>
         <th>Method</th>
@@ -17,23 +17,23 @@
       </tr>
       <tr>
         <td>all? { |item| <i>test</i> }</td>
-        <td>Returns <b>true</b> if all no item in the collection returns <b>false</b> or <b>nil</b></td>
+        <td>Returns <b>true</b> if <i>no</i> item in the collection returns <b>false</b> or <b>nil</b></td>
       </tr>
       <tr>
         <td>any? { |item| <i>test</i> }</td>
         <td>Returns <b>true</b> if any item returns a result <i>other than</i> <b>false</b> or <b>nil</b></td>
       </tr>
        <tr>
-        <td>include? { |item| <i>test</i> }</td>
-        <td>Returns <b>true</b> if any item in the collection returns <b>true</b></td>
+        <td>include?(value)</td>
+        <td>Returns <b>true</b> if <i>any</i> item in the collection == value</td>
       </tr>
        <tr>
-        <td>member? { |item| <i>test</i> }</td>
-        <td>Returns <b>true</b> if any item in the collection returns <b>true</b></td>
+        <td>member?(value)</td>
+        <td>Returns <b>true</b> if <i>any</i> item in the collection == value</td>
       </tr>
       <tr>
         <td>none? { |item| <i>test</i> }</td>
-        <td>Returns <b>true</b> if no item in the collection returns <b>true</b></td>
+        <td>Returns <b>true</b> if <i>no</i> item in the collection returns <b>true</b></td>
       </tr>
        <tr>
         <td>one? { |item| <i>test</i> }</td>
@@ -41,11 +41,94 @@
       </tr>
     </table>    
 
+    <table id="single-element">
+      <caption>Enumerable Methods Returning Single Element</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+      <tr>
+        <td>detect(ifnone = nil) { |item| <i>test</i> }</td>
+        <td>Returns first entry for which the test does not return <b>false</b>. If no such entry, returns <b>ifnone</b> result - <b>nil</b>, by default</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find(ifnone = nil) { |item| <i>test</i> }</td>
+        <td>Returns first entry for which the test does not return <b>false</b>. If no such entry, returns <b>ifnone</b> result - <b>nil</b>, by default</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find_index(<i>value</i>)</td>
+        <td>Returns the <b>index</b> for the first entry for which the value matches the argument. If no such entry, returns <b>nil</b>.</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>find_index { |item| <i>test</i> }</td>
+        <td>Returns the <b>index</b> for the first entry for which the test does not return <b>false</b>. If no such entry, returns <b>nil</b></td>
+        <td>yes</td>
+      </tr>
+       <tr>
+        <td>max</td>
+        <td>Returns the <b>object</b> with the highest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <b>object</b> with the highest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>max_by { |item| <i>comparison</i>}</td>
+        <td>Returns the <b>element</b> with the highest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>min</td>
+        <td>Returns the <b>object</b> with the lowest value according to <code>Comparable</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min { |a, b| <i>comparison</i>}</td>
+        <td>Returns the <b>object</b> with the lowest value according to comparison block</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>min_by { |item| <i>comparison</i>}</td>
+        <td>Returns the <b>element</b> with the lowest value according to comparison block</td>
+        <td>yes</td>
+      </tr>
+      <tr>
+        <td>minmax</td>
+        <td>Returns an <b>array</b> containing the objects with the highest and lowest values according to <code>Comparable</code> => [min, max]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>minmax { |a, b| <i>comparison</i>}</td>
+        <td>Returns an <b>array</b> containing the objects with the highest and lowest values according to comparison block => [min, max]</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>minmax_by { |item| <i>comparison</i>}</td>
+        <td>Returns an <b>array</b> containing the elements with the lowest value according to comparison block => [min, max]</td>
+        <td>yes</td>
+      </tr>
+    </table>
+
+    <table id="multiple-elements">
+      <caption>Enumerable Methods Returning Multiple Elements</caption>
+      <tr>
+        <th>Method</th>
+        <th>Result</th>
+        <th>Able to return enumerator?</th>
+      </tr>
+
+    </table>
+
     cycle, lazy
 
     <br>Methods that return a single value<br>
-    count, detect/find, find_index, include?/member?, inject/reduce, max, max_by,
-    min, min_by, none?, one?, 
+    count, inject/reduce
 
 
     <br>Methods that do something to every element in an array or object<br>
