@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>git and Version Control</title>
+  <title>Test-Driven Development</title>
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
   <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/tech.css">
 </head>
 
 <body>
@@ -50,14 +51,47 @@
         <a href="http://pdynowski.github.io">Back to main site</a>
       </aside>
       <article>
-      <p id="main-title">git, GitHub, and version control</p>
-      <p id="subtitle">The fine art of keeping track of what's going on with your code</p>
-      <p id="date">Oct 22, 2015</p>
+      <p id="main-title">Test-driven development</p>
+      <p id="subtitle">Test, code, refactor. Repeat as necessary.</p>
+      <p id="date">Dec 12, 2015</p>
 
         <p class="question">
-          What are the benefits of version control? </p>
-          <p class="answer">The first benefit of version control is that it makes collaborating on projects easier; instead of having an entire team of people each trying to coordinate when they can work on a file without conflicting with anyone else, everyone can make their changes concurrently and have them merged together later.<br><br>
-          Another benefit of version control is that it keeps track of what has changed in the project and when. Every time changes are committed to the project, and every time the project is merged, the changes are described, and a backup copy of the project, prior to the changes is stored. This also provides for the ability to restore the project to an earlier version, should the changes prove suboptimal.
+          What is test-driven development? </p>
+          <p class="answer">Test-driven development is a style of coding that centers on the repetition of a short development cycle. Basically, a programmer adds a test case that defines a new function, adds a minimum amount of code to pass that test (and all previous tests), and then refactors the code.
+        </p>
+        <p class="question">
+          OK, then. Why would I want to do it? </p>
+          <p class="answer"><ul>
+            <li>Tends to produce modular, flexible, and extensible code</li>
+            <li>Ensures all code is covered by at least one test</li>
+            <li>Limits number of defects in the code</li>
+            <li>Catches errors early in the development cycle, helping to avoid complicated degugging later in development</li>
+            <li>Tests tend to be very thorough, and detect unexpected changes in code behavior when the code base is later edited</li>
+            <li>Prevents extraneous labor since code is not written unless there is first a test to motivate that code</li>
+          </ul>
+        </p>
+        <p class="question">
+          Convincing. How do I do it? </p>
+          <p class="answer">
+            <ol>
+              <li>Add a test - figure out what feature you would like to add, and then write a test to cover that feature.</li>
+              <li>Run all tests and make sure the new one fails - this will validate that the test setup is working, that the feature you want to add doesn't already exist, and that the new test is actually useful and fails in the expected circumstances.</li>
+              <li>Write new code - write code so that your new test passes; it doesn't have to be pretty, it just has to work. For now.</li>
+              <li>Run the tests again - they should all pass. If so, congratulations - you added a new feature and didn't break anything. Move to the next step. Otherwise, go fix your new code.</li>
+              <li>Refactor your code - clean up your code; improve the readability, split methods to maintain simple, one-function methods, remove duplication, etc.</li>
+              <li>Test again - make sure your refactoring didn't break anything.</li>
+              <li>Do it again - write more tests, add more features, be more awesome.</li>
+            </ol> 
+        </p>
+        <p class="question">
+          Do you maybe have a fancy graphic to illustrate the process of test-driven design? </p>
+          <p class="answer">Of course I do. Well, <a href="https://en.wikipedia.org/wiki/Test-driven_development">Wikipedia</a> else does, and I'm heartlessly swiping it:
+          <img class="tdd" src="../imgs/tdd.png" alt="Test Driven Development Graphic"><br>
+          "<a href="https://commons.wikimedia.org/wiki/File:TDD_Global_Lifecycle.png#/media/File:TDD_Global_Lifecycle.png">TDD Global Lifecycle</a>" by <a href="//commons.wikimedia.org/w/index.php?title=User:Xarawn&amp;action=edit&amp;redlink=1" class="new" title="User:Xarawn (page does not exist)">Xarawn</a> - <span class="int-own-work" lang="en">Own work</span>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a> via <a href="https://commons.wikimedia.org/wiki/">Commons</a>.
+        </p>
+        <p class="question">
+          What issues are there with the process? </p>
+          <p class="answer">
         </p>
 
 </article>
