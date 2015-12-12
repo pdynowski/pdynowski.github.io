@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test-Driven Development</title>
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/tech.css">
+</head>
+
+<body>
+      <header>
+      <img src="../imgs/profile.jpg" alt="My smiling face" class="profile-img">
+      
+      <div id="info">
+        <h1>Paul Dynowski</h1>
+        <h2>Fledgeling Web Developer, All-Around Swell Guy</h2>
+      </div>
+            <p id="links"> 
+          <a href="http://pdynowski.github.io/about-me.html">About Me</a>
+          <a href="http://pdynowski.github.io/resume.html">Resume</a>
+          <a href="http://pdynowski.github.io/blog/index.html">Blog</a>
+          <a href="http://pdynowski.github.io/projects/index.html">Portfolio</a>
+            </p>    
+        
+            <p id="contacts">
+    
+          <a href="https://www.facebook.com/paul.dynowski">Facebook</a>
+          <a href="https://twitter.com/pdynowski">Twitter</a>
+          <a href="https://github.com/pdynowski">GitHub</a>
+          <a href="https://www.linkedin.com/pub/paul-dynowski/36/612/48b
+        ">LinkedIn</a>
+          <a href="mailto:paul.dynowski@gmail.com">Email</a>
+            </p>
+    </header>
+
+<main>
+  <aside>
+        <a href="index.html">Blog Index</a>
+        <br>
+        Links to Blog Articles:
+        <ol>
+          <li><a href="git.html">Git and version control</a><br><p>Added 10/22/2015</p></li>
+          <li><a href="css-concepts.html">CSS and styling</a><p>Added 11/6/2015</p></li>
+          <li><a href="arrays-hashes.html">Arrays and Hashes</a><p>Added 11/10/2015</p></li>
+          <li><a href="accessibility.html">Accessible Design</a><p>Added 11/12/2015</p></li>
+          <li><a href="enumerable-methods.html">Enumerable Methods</a><p>Added 11/16/2015</p></li>
+          <li><a href="ruby-classes.html">Ruby Classes</a><p>Added 11/26/2015</p></li>
+          <li><a href="JavaScript.html">JavaScript Objects</a><p>Added 12/3/2015</p></li>
+          <li><a href="tech.html">Test-Driven Development</a><p>Added 12/12/2015</p></li>
+        </ol>
+        <a href="http://pdynowski.github.io">Back to main site</a>
+      </aside>
+      <article>
+      <p id="main-title">Test-driven development</p>
+      <p id="subtitle">Test, code, refactor. Repeat as necessary.</p>
+      <p id="date">Dec 12, 2015</p>
+
+        <p class="question">
+          What is test-driven development? </p>
+          <p class="answer">Test-driven development is a style of coding that centers on the repetition of a short development cycle. Basically, a programmer adds a test case that defines a new function, adds a minimum amount of code to pass that test (and all previous tests), and then refactors the code.
+        </p>
+        <p class="question">
+          OK, then. Why would I want to do it? </p>
+          <p class="answer"><ul>
+            <li>Tends to produce modular, flexible, and extensible code</li>
+            <li>Ensures all code is covered by at least one test</li>
+            <li>Limits number of defects in the code</li>
+            <li>Catches errors early in the development cycle, helping to avoid complicated degugging later in development</li>
+            <li>Tests tend to be very thorough, and detect unexpected changes in code behavior when the code base is later edited</li>
+            <li>Prevents extraneous labor since code is not written unless there is first a test to motivate that code</li>
+          </ul>
+        </p>
+        <p class="question">
+          Convincing. How do I do it? </p>
+          <p class="answer">
+            <ol>
+              <li>Add a test - figure out what feature you would like to add, and then write a test to cover that feature.</li>
+              <li>Run all tests and make sure the new one fails - this will validate that the test setup is working, that the feature you want to add doesn't already exist, and that the new test is actually useful and fails in the expected circumstances.</li>
+              <li>Write new code - write code so that your new test passes; it doesn't have to be pretty, it just has to work. For now.</li>
+              <li>Run the tests again - they should all pass. If so, congratulations - you added a new feature and didn't break anything. Move to the next step. Otherwise, go fix your new code.</li>
+              <li>Refactor your code - clean up your code; improve the readability, split methods to maintain simple, one-function methods, remove duplication, etc.</li>
+              <li>Test again - make sure your refactoring didn't break anything.</li>
+              <li>Do it again - write more tests, add more features, be more awesome.</li>
+            </ol> 
+        </p>
+        <p class="question">
+          Do you maybe have a fancy graphic to illustrate the process of test-driven design? </p>
+          <p class="answer">Of course I do. Well, <a href="https://en.wikipedia.org/wiki/Test-driven_development">Wikipedia</a> else does, and I'm heartlessly swiping it:
+          <img class="tdd" src="../imgs/tdd.png" alt="Test Driven Development Graphic"><br>
+          "<a href="https://commons.wikimedia.org/wiki/File:TDD_Global_Lifecycle.png#/media/File:TDD_Global_Lifecycle.png">TDD Global Lifecycle</a>" by <a href="//commons.wikimedia.org/w/index.php?title=User:Xarawn&amp;action=edit&amp;redlink=1" class="new" title="User:Xarawn (page does not exist)">Xarawn</a> - <span class="int-own-work" lang="en">Own work</span>. Licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a> via <a href="https://commons.wikimedia.org/wiki/">Commons</a>.
+        </p>
+        <p class="question">
+          What concerns are there about the process? </p>
+          <p class="answer">Hey, look, another list!
+            <ul>
+              <li>Some worry that test-driven design leads to code that passes the tests, but won't necessarily work under real world conditions</li>
+              <li>Often doesn't perform sufficient testing in situations involving GUIs or database work</li>
+              <li>Tests are usually created by the same person doing the coding, meaning that similar things will be overlooked in both testing and coding</li>
+              <li>Tests create extra maintenance load on the project</li>
+              <li>TDD provides a false sense of confidence, and may prevent sufficient testing at later stages, e.g. in integration testing</li>
+            </ul> 
+            These are all reasonable concerns, of course, but most of them can be obviated by being thorough and conscientious in your programming. Pairing may also help alleviate concerns about blind spots with the method.
+        </p>
+
+</article>
+</main>
+</body>
+</html>
