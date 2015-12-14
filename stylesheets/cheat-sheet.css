@@ -13,17 +13,31 @@ table, th, tr, td {
 }
 
 table#boolean-value{
-  background-color:green;
+  background-color:red;
+}
+
+table#single-value{
+  background-color: orange;
 }
 
 table#single-element{
-  background-color:orange;
+  background-color:yellow;
 }
 
 table#multiple-elements{
-  background-color:#c04000;
+  background-color:green;
 }
 
 table#subsets{
-  background-color:cyan;
+  background-color:blue;
+}
+
+table#iterative{
+  background-color: #4b0082;
+  color: white;
+}
+
+table#arrays{
+  background-color: #551a8b;
+  color: white;
 }
